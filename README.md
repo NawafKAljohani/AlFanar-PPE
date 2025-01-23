@@ -18,7 +18,7 @@ A computer vision system to detect **Personal Protective Equipment (PPE)** viola
   - [Install Required Packages](#install-required-packages)
 - [Data Description](#data-description)
 - [Inference Code](#inference-code)
-- [Training & Tune Code](#training-code)
+- [Train & Tune Code](#training-code)
 ---
 
 ## Repository Structure
@@ -104,7 +104,7 @@ This project utilizes a **10K-image dataset** formatted for YOLO-based object de
 Also, upload the weights to the [release page](https://github.com/WakebDataScience/template/releases/new) and describe each one uploaded with results, epochs, and parameters used. Then, place the weights in the [*inference/weights/*](inference/weights/) directory after downloading them
 <you have to create .gitignore so you don't upload the wieghts to the repository>
 
-## Training Code
+## Train & Tune Code
 *Instructions on how to train the model, including arguments and their descriptions.*
 
 1. **Navigate to the training directory.**
