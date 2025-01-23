@@ -18,7 +18,7 @@ A computer vision system to detect **Personal Protective Equipment (PPE)** viola
   - [Install Required Packages](#install-required-packages)
 - [Data Description](#data-description)
 - [Inference Code](#inference-code)
-- [Train & Tune Code](#Train-&-Tune-Code)
+- [Train & Tune Code](#Train-Tune-Code)
 ---
 
 ## Repository Structure
