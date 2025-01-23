@@ -1,48 +1,73 @@
 # AlFanar-PPE
-*Provide a detailed description of the project, including its purpose, how it works, and its applications.*
 
+A computer vision system to detect **Personal Protective Equipment (PPE)** violations for three classes:
+
+1. **No_Gloves**  
+2. **No_Helmet**  
+3. **No_Sleeves**
+
+---
 
 ## Table of Contents
-- [Repository Structure](#Repository-Structure)
-- [Configuration](#Configuration)
-- [Setup and Installation](#Setup-and-Installation)
-- [Data Description](#Data-Description)
-- [Inference Code](#Inference-Code)
-- [Training Code](#Training-Code)
-- [Scores and Results](#Scores-and-Results)
-- [Sources](#Sources)
-- [Future Work](#Future-work)
+
+- [Repository Structure](#repository-structure)
+- [Configuration](#configuration)
+- [Setup and Installation](#setup-and-installation)
+  - [Using Conda](#using-conda)
+  - [Using Virtual Environment](#using-virtual-environment)
+  - [Install Required Packages](#install-required-packages)
+- [Data Description](#data-description)
+- [Inference Code](#inference-code)
+- [Training Code](#training-code)
+- [Scores and Results](#scores-and-results)
+- [Sources](#sources)
+- [Future Work](#future-work)
+
+---
 
 ## Repository Structure
-you can use the `tree` command to copy the file structure and then paste it here
-- install
+
+Below is an example repository structure.  
+If you want to generate an actual tree of your current folder, install **tree** and run it, then paste the output here:
+
 ```bash
-sudo apt-get install tree 
-```
-- run
-```bash
-cd /path/to/your/folder
+sudo apt-get install tree    # Install tree if not available
+cd /path/to/AlFanar-PPE     # Navigate to your project folder
 tree
 ```
 - output
 ```bash
-├── inference
-│  ├── inference.py
-│  └── weights
-│    └── model-weights-here
-├── training
-│  └── train.py
-├── gitignore
-├── requirements.txt
-└── README.md
+cv_6/
+├── a.env
+├── best.pt
+├── cameras.streams
+├── dashboard.py
+├── data.yaml
+├── inference.py
+├── README.md
+├── runs
+│   └── detect
+├── training.py
+├── tune.py
+├── train
+│   ├── images
+│   ├── labels
+│   └── labels.cache
+├── val
+│   ├── images
+│   ├── labels
+│   └── labels.cache
+├── yolov8n.pt
+└── yolov8s.pt
+
 ```
 
 ## Configuration
-*Specify the prerequisites needed for this project.*
-- **CUDA Version:** <insert CUDA version>
-- **Operating System:** <insert OS version, e.g., Ubuntu 20.04>
-- **Python Version:** <insert Python version, e.g., 3.10>
-- **GPU Model:** <write here your gpu model/size, e.g, RTX 4090, VRAM24GB> 
+*List out the specific environment or hardware details needed for this project:*
+- **CUDA Version:** <insert CUDA Version: 12.4 >
+- **Operating System:** <insert OS version: Ubuntu 24.04.1 LTS>
+- **Python Version:** <insert Python 3.8.20 >
+- **GPU Model:** <write gpu model: RTX 4070 ti super, VRAM16GB> 
 
 ## Setup and Installation
 
@@ -64,22 +89,21 @@ pip install -r requirements.txt
 ```
 
 ## Data Description
-*Provide detailed processing steps and data format required for training or finetuning the model and mention any specific notes or important considerations and mention any challenges you ve fixed and load sample of your dataset to [release page](https://github.com/WakebDataScience/template/releases/new).*
+
+This project utilizes a **10K-image dataset** formatted for YOLO-based object detection. Below is an overview of how the data is structured, processed, and any key considerations to keep in mind when training or fine-tuning the model.
 
 ## Inference Code
 *Instructions on how to run inference.*
 
 1. **Navigate to the inference directory.**
     ```sh
-    cd inference
+    cd cv_6
     ```
 2. **Execute `inference.py` with parameters:**
     ```sh
     python inference.py 
     ```
-    - `--parameter1`: *descripe it*
-    - `--parameter2`: *descripe it*
-    - `--parameter3`: *descripe it*
+
       
 Also, upload the weights to the [release page](https://github.com/WakebDataScience/template/releases/new) and describe each one uploaded with results, epochs, and parameters used. Then, place the weights in the [*inference/weights/*](inference/weights/) directory after downloading them
 <you have to create .gitignore so you don't upload the wieghts to the repository>
@@ -89,29 +113,18 @@ Also, upload the weights to the [release page](https://github.com/WakebDataScien
 
 1. **Navigate to the training directory.**
     ```sh
-    cd training
+    cd cv_6
     ```
 2. **Run the training script `train.py` with parameters:**
     ```sh
-    python train.py 
+    python training.py 
     ```
-    - `--parameter1`: *descripe it*
-    - `--parameter2`: *descripe it*
-    - `--parameter3`: *descripe it*
 
-
-## Scores and Results
-*Provide the scores and results of the model and mention the metrics used and provide descriptions.*
-
-## Sources
-*Acknowledge the repositories and papers that influenced and were used in the development of this model*
-- Brief description about the source -- [Paper Link](#) | [Repository Link](#)
-
-
-## Future Work
-Add the development checklist here
-
-_______________________
-
-
-Feel free to edit and customize this template as needed to fit the specific requirements and preferences of your project
+1. **Navigate to the Tuning directory.**
+    ```sh
+    cd cv_6
+    ```
+2. **Run the training script `tune.py` with parameters:**
+    ```sh
+    python tune.py 
+    ```

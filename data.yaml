@@ -1,0 +1,11 @@
+train: /home/user/Desktop/cv_6/train
+val: /home/user/Desktop/cv_6/val
+
+nc: 6
+names:
+  0: Gloves
+  1: No_Gloves
+  2: sleeves
+  3: No_sleeves
+  4: helmet
+  5: No_helmet
